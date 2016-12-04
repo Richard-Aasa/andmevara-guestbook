@@ -47,6 +47,18 @@
         if (localStorage.getItem("comment")) {
             comments = localStorage.getItem("comment");
             createCommentList(comments);
+        } else {
+            $.ajax({
+                url: "/comment",
+                success: function(data){
+                        if(data._embedded.comment.length > 0) {
+                            localStorage.setItem("comment", data._embedded.comment);
+                            comments = data._embedded.comment;
+                            createCommentList(comments);
+                        }
+                },
+                dataType: "json"
+            });
         }
         // Tavaline ajax poll. Long-poll ja websocket oleks liig külalisteraamatu jaoks minu arust
         // Uuendus iga minuti tagant
