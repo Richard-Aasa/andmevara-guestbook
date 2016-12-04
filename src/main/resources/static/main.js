@@ -9,7 +9,7 @@
     }).bind(Storage.prototype.setItem);
 
     // Genereerib vastavad DOM elemendid
-    function createCommentList() {
+    function createCommentList(comments) {
         $.each(comments, function(index, item){
             addCommentToList(item);
         });
@@ -46,7 +46,7 @@
         // LocalStorage mahutab tavaliselt vaikimisi brauserites kuni 10MB
         if (localStorage.getItem("comment")) {
             comments = localStorage.getItem("comment");
-            createCommentList();
+            createCommentList(comments);
         }
         // Tavaline ajax poll. Long-poll ja websocket oleks liig külalisteraamatu jaoks minu arust
         // Uuendus iga minuti tagant
