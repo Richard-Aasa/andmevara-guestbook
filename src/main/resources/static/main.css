@@ -1,0 +1,33 @@
+#comments > div, #postComment {
+    background-color: white;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    margin-bottom: 12px;
+    padding: 8px;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    resize: vertical;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
+}
+input {
+    margin: 4px;
+}
+@media screen and (min-width: 760px) {
+    body {
+        padding: 0 20%;
+    }
+}
+body {
+    background-color: #191919;
+}
+p {
+    border: 1px dashed slategray;
+    padding: 4px;
+}

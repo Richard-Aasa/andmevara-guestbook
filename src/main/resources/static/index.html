@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Külalisteraamat</title>
+    <!-- MIT litsentsiga ~9KB jQuery alternatiiv -->
+    <script src="zepto.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <form id="postComment">
+        Nimi: <input maxlength="50" required type="text" id="name"/>
+        Email: <input type="email" id="email"/>
+        <textarea maxlength="1000" required id="comment"></textarea>
+        <input type="submit" value="Kommenteeri"/>
+    </form>
+    <div id="comments"></div>
+</body>
+</html>
