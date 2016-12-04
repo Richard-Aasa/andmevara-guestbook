@@ -50,7 +50,8 @@
         }
         // Tavaline ajax poll. Long-poll ja websocket oleks liig külalisteraamatu jaoks minu arust
         // Uuendus iga minuti tagant
-        setInterval(function(){
+        (function poll(){
+            setTimeout(function(){
                 $.ajax({
                     url: "/comment",
                     success: function(data){
@@ -68,10 +69,12 @@
                                 localStorage.removeItem("comment");
                             }
                         }
+                        poll();
                     },
                     dataType: "json"
                 });
-        }, 60000);
+            }, 60000);
+        })();
         $('#postComment').submit(function(e){
             e.preventDefault();
             var temp = {};

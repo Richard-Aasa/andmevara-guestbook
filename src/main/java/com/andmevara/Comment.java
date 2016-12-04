@@ -21,8 +21,6 @@ public class Comment {
     @Column(length = 1000)
     private String comment;
 
-    @Column(insertable=false, updatable=false)
-    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
     public Long getId() {
@@ -57,7 +55,7 @@ public class Comment {
         this.comment = comment;
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(insertable=false, updatable=false)
     public Date getCreatedDate() {
         return createdDate;
     }
